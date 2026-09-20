@@ -14,7 +14,7 @@
 
 %%
 
-int yywrap(void)
+int yywrap(void) //There is no more input to process.Returning 1 means the scanning is finished.
 {
     return 1;
 }
@@ -32,7 +32,7 @@ int main()
         return 1;
     }
 
-    yyin = f;
+    yyin = f; //lex always read i/p from keyboard, by using this it reads from that file
     yylex();
 
     printf("\nNo. of lines: %d\n", lineCount);
